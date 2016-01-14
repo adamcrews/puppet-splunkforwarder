@@ -10,7 +10,7 @@ class splunkforwarder::params {
       $service_name = 'splunkforwarder'
       $splunk_home  = '/opt/splunkforwarder'
     }
-    'Windows': {
+    'windows': {
       $package_name     = 'splunkforwarder'
       $package_provider = 'chocolatey'
       $service_name     = 'SplunkForwarder'

@@ -13,48 +13,58 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves. This is your 30 second elevator pitch for your module. Consider including OS/Puppet version it works with.       
+This will install the Splunk Universal Forwarder and allow for client side
+configuration of inputs files.
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology the module integrates with and what that integration enables. This section should answer the questions: "What does this module *do*?" and "Why would I use it?"
+This current version requires that you install a TA file that contains the output locations.  It is not intended to be a generic module at this point.
 
-If your module has a range of functionality (installation, configuration, management, etc.) this is the time to mention it.
+Additionally, this module can currently only use the splunk 'monitor' input type.
+Additional types will be added soon.
 
 ## Setup
 
 ### What splunkforwarder affects
 
-* A list of files, packages, services, or operations that the module will alter, impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form. 
+* Install the splunk universal forwarder on \*nix and Windows hosts.
+* Allow easy, programatic configuration of inputs to tail
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
-If your module requires anything extra before setting up (pluginsync enabled, etc.), mention it here. 
+Make sure the required pre-requsite modules are available on the target system.
 
 ### Beginning with splunkforwarder
 
-The very basic steps needed for a user to get the module up and running. 
-
-If your most recent release breaks compatibility or requires particular steps for upgrading, you may wish to include an additional section here: Upgrading (For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+The very basic steps needed for a user to get the module up and running.
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing the fancy stuff with your module here. 
+```
+$splunk_monitors = {
+  '/home/apps/log1' => {
+    index => 'index1',
+    sourcetype => 'my_src_type',
+    tcp_routing => [ 'group1', 'group2' ],
+  }
+}
+
+include ::splunkforwarder
+splunkforwarder::ta { 'MyCustomTa':
+  source => 'http://path/to/ta.zip',
+}
+
+create_resources('splunkforwarder::inputs::monitor', $splunk_monitors)
+```
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module. This section should include all of the under-the-hood workings of your module so people know what the module is touching on their system but don't need to mess with things. (We are working on automating this section!)
+Check each source file for embedded documentation.
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+This module has only been tested on CentOS/RHEL 6 and Windows 7.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should consider using changelog). You may also add any additional sections you feel are necessary or important to include here. Please use the `## ` header. 
+Fork the module, create a branch, do awesome things, submit a PR.

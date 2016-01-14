@@ -1,0 +1,66 @@
+[monitor://<%= @title %>]
+  index = <%= @index %>
+<% if @source -%>
+  source = <%= @source %>
+<% end -%>
+<% if @sourcetype -%>
+  sourcetype = <%= @sourcetype %>
+<% end -%>
+<% if @queue -%>
+  queue = <%= @queue %>
+<% end -%>
+<% if @host_regex -%>
+  host_regex = <%= @host_regex %>
+<% end -%>
+<% if @host_segment -%>
+  host_segment = <%= @host_segment %>
+<% end -%>
+<% if @whitelist -%>
+  whitelist = <%= @whitelist %>
+<% end -%>
+<% if @blacklist -%>
+  blacklist = <%= @blacklist %>
+<% end -%>
+<% if @crcsalt -%>
+  crcSalt = <%= @crcsalt %>
+<% end -%>
+<% if @initcrclength -%>
+  initCrcLength = <%= @initcrclength %>
+<% end -%>
+<% if @ignoreodlerthan -%>
+  ignoreOlderThan = <%= @ignoreolderthan %>
+<% end -%>
+<% if @followtail -%>
+  followTail = <%= @followtail %>
+<% end -%>
+<% if @alwaysopenfile -%>
+  alwaysOpenFile = <%= @alwaysopenfile %>
+<% end -%>
+<% if @time_before_close -%>
+  time_before_close = <%= @time_before_close %>
+<% end -%>
+<% if @multiline_event_extra_waittime -%>
+  multiline_event_extra_waittime = <%= @multiline_event_extra_waittime %>
+<% end -%>
+<% if @recursive -%>
+  recursive = <%= @recursive %>
+<% end -%>
+<% if @followsymlink -%>
+  followSymlink = <%= @followsymlink %>
+<% end -%>
+<% if @tcp_routing -%>
+  _TCP_ROUTING = <%= @tcp_routing.join(',') %>
+<% end -%>
+<% if @syslog_routing -%>
+  _SYSLOG_ROUTING = <%= @syslog_routing.join(',') %>
+<% end -%>
+<% if @index_and_forward_routing -%>
+  _INDEX_AND_FORWARD_ROUTING = <%= @index_and_forward_routing %>
+<% end -%>
+<% if @custom_hash -%>
+  <% @custom_hash.sort.each do |key,value| -%>
+  <%= key %> = <%= value %>
+  <% end -%>
+<% end -%>
+
+
