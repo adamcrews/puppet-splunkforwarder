@@ -14,6 +14,6 @@ fixtures:
       ref: '1.2.0'
     archive:
       repo: 'https://github.com/voxpupuli/puppet-archive.git'
-      ref: '2.0.0'
+      ref: '0.4.4'
   symlinks:
     splunkforwarder: "#{source_dir}"
