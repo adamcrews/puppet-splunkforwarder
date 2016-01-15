@@ -1,6 +1,10 @@
+2016-01-14 23:14:47 -0800 Adam Crews 
+
+	* Fix monitor (HEAD -> fix_monitor)
+
 2016-01-14 22:53:50 -0800 Adam Crews 
 
-	* metadata fixes (HEAD -> fix_fixtures)
+	* metadata fixes (origin/fix_fixtures, fix_fixtures)
 
 2016-01-14 13:03:39 -0800 Adam Crews 
 

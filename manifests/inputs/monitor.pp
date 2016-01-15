@@ -5,7 +5,7 @@
 #
 # generates:
 #
-define splunk::inputs::monitor (
+define splunkforwarder::inputs::monitor (
   $target = 'inputs.conf',
   $order  = '50',
 
