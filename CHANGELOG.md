@@ -1,6 +1,10 @@
+2016-01-20 10:40:27 -0800 Adam Crews 
+
+	* Fixed concat titles to not have spaces or wildcards (HEAD -> fix_spaces)
+
 2016-01-14 23:14:47 -0800 Adam Crews 
 
-	* Fix monitor (HEAD -> fix_monitor)
+	* Fix monitor (origin/fix_monitor, fix_monitor)
 
 2016-01-14 22:53:50 -0800 Adam Crews 
 
@@ -8,7 +12,7 @@
 
 2016-01-14 13:03:39 -0800 Adam Crews 
 
-	* WIP (origin/master, origin/WIP, master, WIP)
+	* WIP (origin/WIP, WIP)
 
 2016-01-05 14:57:54 -0800 Adam Crews 
 
