@@ -94,7 +94,9 @@ define splunkforwarder::inputs::monitor (
 
   validate_string($index_and_forward_routing)
 
-  concat::fragment { "inputs::monitor::${title}":
+  $_title = regsubst($title, '(\s+|\*)', '_', 'G')
+
+  concat::fragment { $_title:
     target  => $target,
     order   => $order,
     content => template("${module_name}/inputs/50-monitor.erb"),
