@@ -1,6 +1,10 @@
+2016-01-20 16:41:28 -0800 Adam Crews 
+
+	* Added additional filter to the monitor (HEAD -> fix_spaces)
+
 2016-01-20 10:40:27 -0800 Adam Crews 
 
-	* Fixed concat titles to not have spaces or wildcards (HEAD -> fix_spaces)
+	* Fixed concat titles to not have spaces or wildcards (origin/fix_spaces)
 
 2016-01-14 23:14:47 -0800 Adam Crews 
 

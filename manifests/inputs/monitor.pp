@@ -94,7 +94,7 @@ define splunkforwarder::inputs::monitor (
 
   validate_string($index_and_forward_routing)
 
-  $_title = regsubst($title, '(\s+|\*)', '_', 'G')
+  $_title = regsubst($title, '(\s+|\*|:|\\|/)', '_', 'G')
 
   concat::fragment { $_title:
     target  => $target,
