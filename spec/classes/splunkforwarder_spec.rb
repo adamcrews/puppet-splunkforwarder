@@ -19,9 +19,29 @@ describe 'splunkforwarder' do
           it { is_expected.to contain_class('splunkforwarder::config') }
           it { is_expected.to contain_class('splunkforwarder::service').that_subscribes_to('splunkforwarder::config') }
 
-          it { is_expected.to contain_service('splunkforwarder') }
-          it { is_expected.to contain_package('splunkforwarder').with_ensure('present') }
+	  context "on redhat-6-x86_64" do
+		  let (:facts) do
+			  {
+				  :osfamily                  => 'RedHat',
+				  :operatingsystem           => 'RedHat',
+				  :operatingsystemmajrelease => '6',
+			  }
+			  it { is_expected.to contain_service('splunk') }
+			  it { is_expected.to contain_package('splunkforwarder').with_ensure('present') }
+		  end
+	  end
 
+	  context "on Windows 7" do
+		  let (:facts) do
+			  {
+				  :osfamily                  => 'Windows',
+				  :operatingsystem           => 'Windows',
+				  :operatingsystemmajrelease => '7',
+			  }
+			  it { is_expected.to contain_service('splunkforwarder') }
+			  it { is_expected.to contain_package('splunkforwarder').with_ensure('present') }
+		  end
+	  end
           it do
             is_expected.to contain_ini_setting('Server Name')
               .with(
