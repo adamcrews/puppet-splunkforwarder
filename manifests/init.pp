@@ -45,7 +45,6 @@ class splunkforwarder (
 
 ) inherits ::splunkforwarder::params {
 
-  notify { "Splunk_home: ${splunk_home}":}
   # validate all the things!
   validate_re($package_ensure, ['^present', '^absent', '^latest'])
   validate_bool($service_manage, $service_enable)
