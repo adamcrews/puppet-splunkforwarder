@@ -64,6 +64,10 @@ class splunkforwarder::inputs (
   $custom_hash               = undef,
   ) {
 
+  if $::osfamily == 'windows' {
+    File { source_permissions => ignore }
+  }
+
   validate_absolute_path("${path}/inputs.conf")
   validate_string($index)
 
