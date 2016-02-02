@@ -1,10 +1,14 @@
+2016-02-02 14:31:14 -0800 Adam Crews 
+
+	* Add more flags to make splunk shut the hell up and just work (HEAD -> init_scripts)
+
 2016-02-02 14:13:02 -0800 Adam Crews 
 
-	* Added accept license (HEAD -> init_scripts)
+	* Added accept license (origin/init_scripts)
 
 2016-02-02 13:39:20 -0800 Adam Crews 
 
-	* Bump version (origin/init_scripts)
+	* Bump version
 
 2016-02-02 12:11:31 -0800 Adam Crews 
 
