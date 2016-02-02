@@ -10,4 +10,12 @@ class splunkforwarder::install {
     source   => $::splunkforwarder::package_src,
   }
 
+  if $::osfamily != 'windows' {
+    exec { 'Install Splunk Service':
+      command   => "${::splunkforwarder::splunk_home}/bin/splunk enable boot-start --accept-license",
+      path      => ['/usr/bin', '/bin', '/usr/sbin', '/sbin', "${splunkforwarder::splunk_home}/bin"],
+      subscribe => Package[$::splunkforwarder::package_name],
+      unless    => 'test -f /etc/init.d/splunk',
+    }
+  }
 }
