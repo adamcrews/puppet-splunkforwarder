@@ -11,6 +11,11 @@ describe 'splunkforwarder' do
         context "splunkforwarder class without any parameters" do
           let(:params) {{ }}
 
+          service_name = case facts[:osfamily]
+            when 'windows' then 'splunkforwarder'
+            else 'splunk'
+          end
+
           it { is_expected.to compile.with_all_deps }
 
           it { is_expected.to contain_class('splunkforwarder') }
@@ -18,30 +23,15 @@ describe 'splunkforwarder' do
           it { is_expected.to contain_class('splunkforwarder::install').that_comes_before('splunkforwarder::config') }
           it { is_expected.to contain_class('splunkforwarder::config') }
           it { is_expected.to contain_class('splunkforwarder::service').that_subscribes_to('splunkforwarder::config') }
+			    it { is_expected.to contain_service(service_name) }
+			    it { is_expected.to contain_package('splunkforwarder').with_ensure('present') }
 
-	  context "on redhat-6-x86_64" do
-		  let (:facts) do
-			  {
-				  :osfamily                  => 'RedHat',
-				  :operatingsystem           => 'RedHat',
-				  :operatingsystemmajrelease => '6',
-			  }
-			  it { is_expected.to contain_service('splunk') }
-			  it { is_expected.to contain_package('splunkforwarder').with_ensure('present') }
-		  end
-	  end
+          if facts[:osfamily] == 'windows'
+			      it { is_expected.not_to contain_exec('Install Splunk Service') }
+          else
+			      it { is_expected.to contain_exec('Install Splunk Service') }
+          end
 
-	  context "on Windows 7" do
-		  let (:facts) do
-			  {
-				  :osfamily                  => 'Windows',
-				  :operatingsystem           => 'Windows',
-				  :operatingsystemmajrelease => '7',
-			  }
-			  it { is_expected.to contain_service('splunkforwarder') }
-			  it { is_expected.to contain_package('splunkforwarder').with_ensure('present') }
-		  end
-	  end
           it do
             is_expected.to contain_ini_setting('Server Name')
               .with(
@@ -49,7 +39,7 @@ describe 'splunkforwarder' do
                 :path => '/opt/splunkforwarder/etc/system/local/server.conf',
                 :section => 'general',
                 :setting => 'serverName',
-                :value => 'foo.example.com'
+                :value => facts[:fqdn]
               )
           end
 
