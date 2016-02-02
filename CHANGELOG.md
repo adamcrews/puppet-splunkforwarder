@@ -1,10 +1,14 @@
+2016-02-02 14:13:02 -0800 Adam Crews 
+
+	* Added accept license (HEAD -> init_scripts)
+
 2016-02-02 13:39:20 -0800 Adam Crews 
 
-	* Bump version (HEAD -> init_scripts)
+	* Bump version (origin/init_scripts)
 
 2016-02-02 12:11:31 -0800 Adam Crews 
 
-	* Adding service install (origin/init_scripts)
+	* Adding service install
 
 2016-01-28 11:15:25 -0800 Adam Crews 
 
