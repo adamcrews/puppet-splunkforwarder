@@ -78,10 +78,10 @@
       ]
     },
     {
-      "operatingsystem": "Windows",
+      "operatingsystem": "windows",
       "operatingsystemrelease": [
-        "Server 2012",
-        "Server 2012 R2",
+        "2012",
+        "2012 R2",
         "7",
         "8"
       ]
