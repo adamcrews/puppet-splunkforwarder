@@ -32,7 +32,7 @@
 class splunkforwarder (
   $package_name     = $::splunkforwarder::params::package_name,
   $package_provider = $::splunkforwarder::params::package_provider,
-  $pacakge_src      = undef,
+  $package_src      = $::splunkforwarder::params::package_src,
   $package_ensure   = 'present',
 
   $service_name   = $::splunkforwarder::params::service_name,

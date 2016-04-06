@@ -6,13 +6,16 @@
 class splunkforwarder::params {
   case $::osfamily {
     'Debian', 'RedHat', 'Amazon': {
-      $package_name = 'splunkforwarder'
-      $service_name = 'splunk'
-      $splunk_home  = '/opt/splunkforwarder'
+      $package_name     = 'splunkforwarder'
+      $package_provider = undef
+      $package_src      = undef
+      $service_name     = 'splunk'
+      $splunk_home      = '/opt/splunkforwarder'
     }
     'windows': {
       $package_name     = 'splunkforwarder'
       $package_provider = 'chocolatey'
+      $package_src      = undef
       $service_name     = 'SplunkForwarder'
       $splunk_home      = 'C:/Program Files/SplunkUniversalForwarder'
     }
