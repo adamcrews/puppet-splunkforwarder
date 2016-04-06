@@ -16,7 +16,11 @@ describe 'splunkforwarder' do
             else 'splunk'
           end
 
-          it { is_expected.to compile.with_all_deps }
+# This is to ignore the bug described here: https://github.com/rodjek/rspec-puppet/issues/192
+          if facts[:osfamily] != 'windows'
+            it { is_expected.to compile.with_all_deps }
+          end
+
           it { is_expected.to contain_class('splunkforwarder') }
           it { is_expected.to contain_class('splunkforwarder::params') }
           it { is_expected.to contain_class('splunkforwarder::install').that_comes_before('splunkforwarder::config') }
