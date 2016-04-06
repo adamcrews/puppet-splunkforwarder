@@ -1,6 +1,6 @@
 {
   "name": "adamcrews-splunkforwarder",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "adamcrews",
   "summary": "Install and manage the basic splunk universal forwarder",
   "license": "Apache-2.0",
