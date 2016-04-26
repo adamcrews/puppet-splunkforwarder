@@ -10,3 +10,4 @@
 /log
 /.rake_tasks
 /tests/custom.pp
+/.ruby-version

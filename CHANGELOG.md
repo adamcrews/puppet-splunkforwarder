@@ -1,10 +1,26 @@
+2016-04-25 22:51:27 -0700 Adam Crews 
+
+	* Fix concat issues (HEAD -> concat_compat)
+
+2016-04-06 13:30:28 -0700 Adam Crews 
+
+	* Fix strict checking and bump release
+
+2016-04-06 09:20:00 -0700 Murphy, Marcus (ETW) 
+
+	* Add workaround for Windows path
+
+2016-04-05 16:20:42 -0700 Murphy, Marcus (ETW) 
+
+	* Update Windows support
+
 2016-02-02 14:31:14 -0800 Adam Crews 
 
-	* Add more flags to make splunk shut the hell up and just work (HEAD -> init_scripts)
+	* Add more flags to make splunk shut the hell up and just work (origin/init_scripts, init_scripts)
 
 2016-02-02 14:13:02 -0800 Adam Crews 
 
-	* Added accept license (origin/init_scripts)
+	* Added accept license
 
 2016-02-02 13:39:20 -0800 Adam Crews 
 
