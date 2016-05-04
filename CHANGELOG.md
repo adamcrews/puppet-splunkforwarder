@@ -1,6 +1,10 @@
+2016-05-04 14:43:20 -0700 Adam Crews 
+
+	* Fixing regex to be simpler and more accurate (HEAD -> fix_regex)
+
 2016-04-25 22:51:27 -0700 Adam Crews 
 
-	* Fix concat issues (HEAD -> concat_compat)
+	* Fix concat issues (origin/concat_compat, concat_compat)
 
 2016-04-06 13:30:28 -0700 Adam Crews 
 
