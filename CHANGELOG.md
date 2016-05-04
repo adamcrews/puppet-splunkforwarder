@@ -1,6 +1,10 @@
+2016-05-04 14:54:15 -0700 Adam Crews 
+
+	* Forgot to bump release (HEAD -> bump)
+
 2016-05-04 14:43:20 -0700 Adam Crews 
 
-	* Fixing regex to be simpler and more accurate (HEAD -> fix_regex)
+	* Fixing regex to be simpler and more accurate (origin/fix_regex)
 
 2016-04-25 22:51:27 -0700 Adam Crews 
 
